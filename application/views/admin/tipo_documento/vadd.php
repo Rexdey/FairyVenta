@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <section class="content-header">
       <h1>
-          <a href="<?php echo base_url();?>mantenimiento/ccategoria/">Categoría</a>
+          <a href="<?php echo base_url();?>mantenimiento/ctipo_documento/">tipo_documento</a>
           <br>
           <small>Nueva</small>
       </h1>
     </section>
     <section class="content">
-      
+
       <div class="card">
         <div class="card-body" >
           <div class="row">
@@ -18,8 +18,8 @@
                   <?php echo $this->session->flashdata('error')?>
                 </div>
               <?php endif; ?>
-              <!-- <form role="form" id="quickForm" action="<?php echo base_url();?>mantenimiento/ccategoria/cinsert" method="post"> -->
-              <form  action="<?php echo base_url();?>mantenimiento/ccategoria/cinsert" method="post">
+              <!-- <form role="form" id="quickForm" action="<?php echo base_url();?>mantenimiento/ctipo_documento/cinsert" method="post"> -->
+              <form  action="<?php echo base_url();?>mantenimiento/ctipo_documento/cinsert" method="post">
                 <div class="form-group <?php echo !empty(form_error('txtcodigo'))? 'has-error' : '';?>">
                     <label for="codigo">Código</label>
                     <input type="text" id="txtcodigo" name="txtcodigo" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtcodigo')?>" onblur="this.value=this.value.toUpperCase();">
@@ -57,7 +57,7 @@
 
 </div>
 
-<!-- <?php if ($this->uri->segment(2)=='ccategoria') {?> -->
+<!-- <?php if ($this->uri->segment(2)=='ctipo_documento') {?> -->
 
 <!-- jquery-validation -->
 <!-- <script src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js"></script>

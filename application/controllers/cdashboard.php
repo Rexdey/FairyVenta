@@ -19,8 +19,8 @@ class Cdashboard extends CI_Controller
 
 
       $this->load->view('layout/header');
-      $this->load->view('layout/menu');
       $this->load->view('admin/vdashboard');
+      $this->load->view('layout/menu');
       $this->load->view('layout/footer');
 
 

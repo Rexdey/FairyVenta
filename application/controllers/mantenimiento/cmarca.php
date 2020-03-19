@@ -5,7 +5,7 @@
   /**
    *
    */
-  class Ccategoria extends CI_Controller
+  class Cmarca extends CI_Controller
   {
     private $permisos;
 
@@ -15,16 +15,16 @@
       if(!$this->session->userdata('login')){
         redirect(base_url());
       }else {
-        $this->load->model('mcategoria');
+        $this->load->model('mmarca');
       }
     }
 
     public function index(){
       $data = array(
-        'categoriaindex' => $this->mcategoria->mselectcategoria(),
+        'marcaindex' => $this->mmarca->mselectmarca(),
        );
        $this->load->view('layout/header');
-       $this->load->view('admin/categoria/vlist',$data);
+       $this->load->view('admin/marca/vlist',$data);
        $this->load->view('layout/menu');
        $this->load->view('layout/footer');
 
@@ -33,7 +33,7 @@
 
     public function cadd(){
        $this->load->view('layout/header');
-       $this->load->view('admin/categoria/vadd');
+       $this->load->view('admin/marca/vadd');
        $this->load->view('layout/menu');
        $this->load->view('layout/footer');
 
@@ -49,13 +49,14 @@
                 array(
                         'field' => 'txtcodigo',
                         'label' => 'Código',
-                        'rules' => 'required|is_unique[categoria.codigo]|numeric|max_length[11]'
+                        'rules' => 'required|is_unique[marca.codigo]|numeric|max_length[11]'
                 ),
                 array(
                         'field' => 'txtnombre',
                         'label' => 'Nombre',
                         'rules' => 'required',
                 )
+
               );
 
               $this->form_validation->set_rules($config);
@@ -67,42 +68,42 @@
                 'descripcion' => $descripcion ,
                 'estado' => 1
               );
-              $res = $this->mcategoria->minsertcategoria($data);
+              $res = $this->mmarca->minsertmarca($data);
                 if ($res) {
                   $this->session->set_flashdata('correcto', 'Se Guardó Correctamente');
-                  redirect(base_url().'mantenimiento/ccategoria');
+                  redirect(base_url().'mantenimiento/cmarca');
                 }else{
                   $this->session->set_flashdata('error', 'No Guardó Registro');
-                  redirect(base_url().'mantenimiento/ccategoria/cadd');
+                  redirect(base_url().'mantenimiento/cmarca/cadd');
                   }
 
                 }else{
-                  $this->session->set_flashdata('error','No se pudo guardar la categoria');
+                  $this->session->set_flashdata('error','No se pudo guardar la marca');
                   $this->cadd();
                     }
                   }
 
-    public function cedit($idcategoria){
+    public function cedit($idmarca){
       $data = array(
-        'categoriaedit' => $this->mcategoria->midupdatecategoria($idcategoria)
+        'marcaedit' => $this->mmarca->midupdatemarca($idmarca)
       );
       $this->load->view('layout/header');
-      $this->load->view('admin/categoria/vedit',$data);
+      $this->load->view('admin/marca/vedit',$data);
       $this->load->view('layout/menu');
       $this->load->view('layout/footer');
     }
 
     public function cupdate(){
-      $idcategoria       = $this->input->post('txtidcategoria');
+      $idmarca       = $this->input->post('txtidmarca');
       $codigo            = $this->input->post('txtcodigo');
       $nombre            = $this->input->post('txtnombre');
       $descripcion       = $this->input->post('txtdescripcion');
       $estado            = $this->input->post('txtestado');
-      $categoriaActual   = $this->mcategoria->midupdatecategoria($idcategoria);
-          if ($codigo == $categoriaActual->codigo) {
+      $marcaActual   = $this->mmarca->midupdatemarca($idmarca);
+          if ($codigo == $marcaActual->codigo) {
             $unique = '';
           }else{
-            $unique = '|is_unique[categoria.codigo]';
+            $unique = '|is_unique[marca.codigo]';
           }
 
 
@@ -127,26 +128,26 @@
                   'descripcion' => $descripcion ,
                   'estado' => $estado
                 );
-                $res = $this->mcategoria->mupdatecategoria($idcategoria,$data);
+                $res = $this->mmarca->mupdatemarca($idmarca,$data);
                   if ($res) {
                     $this->session->set_flashdata('correcto','Se Guardó Correctamente');
-                    redirect(base_url().'mantenimiento/ccategoria');
+                    redirect(base_url().'mantenimiento/cmarca');
                   }else {
                     $this->session->set_flashdata('error','No se pudo actualizar la categoría');
-                    redirect(base_url().'mantenimiento/ccategoria/cedit'.$idcategoria);
+                    redirect(base_url().'mantenimiento/cmarca/cedit'.$idmarca);
                   }
               }else {
                 $this->session->set_flashdata('error','No se pudo actualizar la categoría');
-                $this->cedit($idcategoria);
+                $this->cedit($idmarca);
               }
             }
 
-            public function cdelete($idcategoria){
+            public function cdelete($idmarca){
               $data = array(
                 'estado' => "10",
               );
-              $this->mcolor->mupdatecategoria($idcategoria,$data);
-              redirect(base_url().'mantenimiento/ccategoria');
+              $this->mmarca->mupdatemarca($idmarca,$data);
+              redirect(base_url().'mantenimiento/cmarca');
             }
 
   }

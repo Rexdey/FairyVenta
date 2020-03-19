@@ -15,7 +15,7 @@
         <img src="<?php echo base_url();?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block"><?php echo "Usuario : ".$this->session->userdata('s_nombre'); ?></a>
+        <a href="#" class="d-block"><?php echo "".$this->session->userdata('s_nombre'); ?></a>
       </div>
     </div>
 
@@ -31,7 +31,8 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
              <li class="nav-item has-treeview">
-               <a href="#" class="nav-link"><?php echo "Us: ".$this->session->userdata('s_nombre'); ?></a>
+               <!-- <a href="#" class="nav-link"><?php echo "Us: ".$this->session->userdata('s_nombre'); ?></a> -->
+               <a href="#" class="nav-link">Mantenimiento</a>
                <ul class="nav nav-treeview">
                  <li class="nav-item">
                    <a href="<?php echo base_url();?>mantenimiento/ccategoria" class="nav-link">
@@ -40,19 +41,52 @@
                    </a>
                  </li>
                  <li class="nav-item">
-                   <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                   <a href="<?php echo base_url();?>mantenimiento/cmarca" class="nav-link">
                      <i class="far fa-circle nav-icon"></i>
-                     <p>Top Navigation + Sidebar</p>
+                     <p>Marca</p>
                    </a>
                  </li>
                  <li class="nav-item">
-                   <a href="pages/layout/boxed.html" class="nav-link">
+                   <a href="<?php echo base_url();?>mantenimiento/cformato" class="nav-link">
                      <i class="far fa-circle nav-icon"></i>
-                     <p>Boxed</p>
+                     <p>Formato</p>
                    </a>
                  </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/cmedida" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>medida</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/ctipo_documento" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>tipo documento</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/ctipo_cliente" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>tipo cliente</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/ccliente" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>cliente</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/cproveedor" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>Proveedor</p>
+                   </a>
+                 </li>
+
               </ul>
+              <hr>
              </li>
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

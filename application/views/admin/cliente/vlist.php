@@ -1,6 +1,6 @@
 <div class="content-wrapper">
     <section class="content-header">
-      <h1>Categoria</h1>
+      <h1>cliente</h1>
       <small>Listado</small>
     </section>
     <section class="content">
@@ -9,12 +9,13 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">
-                <a href="<?php echo base_url();?>mantenimiento/ccategoria/cadd" class="btn btn-primary btn-flat"><span class="fa fa-plus"></span>Agregar Categoria</a>
+                <a href="<?php echo base_url();?>mantenimiento/ccliente/cadd" class="btn btn-primar"><span class="fa fa-plus"></span>Agregar cliente</a>
 
               </div>
 
             </div>
             <?php if ($this->session->flashdata('correcto')): ?>
+              <br>
             <div class="alert alert-success">
               <?php echo $this->session->flashdata('correcto')?>
             </div>
@@ -30,19 +31,24 @@
                       <th>#</th>
                       <th>Código</th>
                       <th>Nombre</th>
-                      <th>Descripción</th>
+                      <th>Tipo Documento</th>
+                      <th>Tipo Cliente</th>
+                      <th>Direccion</th>
                       <th>Estado</th>
                       <th>Opciones</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php if(!empty($categoriaindex)): ?>
-                      <?php foreach ($categoriaindex as $atributos): ?>
+                    <?php if(!empty($clienteindex)): ?>
+                      <?php foreach ($clienteindex as $atributos): ?>
                         <tr>
-                              <td><?php echo $atributos->idcategoria; ?></td>
+                              <td><?php echo $atributos->idcliente; ?></td>
                               <td><?php echo $atributos->codigo; ?></td>
                               <td><?php echo $atributos->nombre; ?></td>
-                              <td><?php echo $atributos->descripcion; ?></td>
+                              <td><?php echo $atributos->tipo_documento; ?></td>
+                              <td><?php echo $atributos->tipo_cliente; ?></td>
+                              <td><?php echo $atributos->direccion; ?></td>
+                              <td><?php echo $atributos->telefono; ?></td>
                               <?php
                               if ($atributos->estado == 1) {
                                 $style='class="badge bg-success"';
@@ -52,7 +58,7 @@
                                 echo "<td><p><span $style><font style='vertical-align: inherit;'>Inactiva</font></span></p></td>";
                               }
                               ?>
-                              <?php $data = $atributos->idcategoria."*".$atributos->codigo."*".$atributos->nombre."*".$atributos->descripcion; ?>
+                              <?php $data = $atributos->idcliente."*".$atributos->codigo."*".$atributos->nombre."*".$atributos->tipo_documento."*".$atributos->tipo_cliente."*".$atributos->direccion."*".$atributos->telefono; ?>
 
 
                               <td>
@@ -60,10 +66,10 @@
                                   <button onclick="myModal(this)" type="button" class="btn btn-info btn-view" data-toggle="modal" data-target="#modal-default" value="<?php echo $data; ?>">
                                   <span class="fa fa-eye"></span>
                                   </button>
-                                  <a href="<?php echo base_url();?>mantenimiento/ccategoria/cedit/<?php echo $atributos->idcategoria;?>" class="btn btn-warning">
+                                  <a href="<?php echo base_url();?>mantenimiento/ccliente/cedit/<?php echo $atributos->idcliente;?>" class="btn btn-warning">
                                   <span class="fas fa-edit"></span>
                                   </a>
-                                  <a href="<?php echo base_url();?>mantenimiento/ccategoria/cdelete/<?php echo $atributos->idcategoria;  ?>" class="btn btn-danger btn-remove">
+                                  <a href="<?php echo base_url();?>mantenimiento/ccliente/cdelete/<?php echo $atributos->idcliente;  ?>" class="btn btn-danger btn-remove">
                                   <span class="fas fa-trash-alt"></span>
                                   </a>
                                 </div>
@@ -105,7 +111,7 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
@@ -115,8 +121,12 @@
   function myModal($var){
       var boton = $var.value;
       var info = boton.split("*");
-      resp = "<p><strong>Codiogo: </strong>"+info[1]+" </p>"
+      resp = "<p><strong>Codigo: </strong>"+info[1]+" </p>"
       resp += "<p><strong>Nombre: </strong>"+info[2]+" </p>"
+      resp += "<p><strong>Tipo Documento: </strong>"+info[3]+" </p>"
+      resp += "<p><strong>Tipo Cliente: </strong>"+info[4]+" </p>"
+      resp += "<p><strong>Direccion: </strong>"+info[5]+" </p>"
+      resp += "<p><strong>Telefono: </strong>"+info[6]+" </p>"
       $("#modal-default .modal-body").html(resp);
 
     }

@@ -5,7 +5,7 @@
   /**
    *
    */
-  class Ccategoria extends CI_Controller
+  class Cformato extends CI_Controller
   {
     private $permisos;
 
@@ -15,16 +15,16 @@
       if(!$this->session->userdata('login')){
         redirect(base_url());
       }else {
-        $this->load->model('mcategoria');
+        $this->load->model('mformato');
       }
     }
 
     public function index(){
       $data = array(
-        'categoriaindex' => $this->mcategoria->mselectcategoria(),
+        'formatoindex' => $this->mformato->mselectformato(),
        );
        $this->load->view('layout/header');
-       $this->load->view('admin/categoria/vlist',$data);
+       $this->load->view('admin/formato/vlist',$data);
        $this->load->view('layout/menu');
        $this->load->view('layout/footer');
 
@@ -33,7 +33,7 @@
 
     public function cadd(){
        $this->load->view('layout/header');
-       $this->load->view('admin/categoria/vadd');
+       $this->load->view('admin/formato/vadd');
        $this->load->view('layout/menu');
        $this->load->view('layout/footer');
 
@@ -49,13 +49,14 @@
                 array(
                         'field' => 'txtcodigo',
                         'label' => 'Código',
-                        'rules' => 'required|is_unique[categoria.codigo]|numeric|max_length[11]'
+                        'rules' => 'required|is_unique[formato.codigo]|numeric|max_length[11]'
                 ),
                 array(
                         'field' => 'txtnombre',
                         'label' => 'Nombre',
                         'rules' => 'required',
                 )
+
               );
 
               $this->form_validation->set_rules($config);
@@ -67,42 +68,42 @@
                 'descripcion' => $descripcion ,
                 'estado' => 1
               );
-              $res = $this->mcategoria->minsertcategoria($data);
+              $res = $this->mformato->minsertformato($data);
                 if ($res) {
                   $this->session->set_flashdata('correcto', 'Se Guardó Correctamente');
-                  redirect(base_url().'mantenimiento/ccategoria');
+                  redirect(base_url().'mantenimiento/cformato');
                 }else{
                   $this->session->set_flashdata('error', 'No Guardó Registro');
-                  redirect(base_url().'mantenimiento/ccategoria/cadd');
+                  redirect(base_url().'mantenimiento/cformato/cadd');
                   }
 
                 }else{
-                  $this->session->set_flashdata('error','No se pudo guardar la categoria');
+                  $this->session->set_flashdata('error','No se pudo guardar la formato');
                   $this->cadd();
                     }
                   }
 
-    public function cedit($idcategoria){
+    public function cedit($idformato){
       $data = array(
-        'categoriaedit' => $this->mcategoria->midupdatecategoria($idcategoria)
+        'formatoedit' => $this->mformato->midupdateformato($idformato)
       );
       $this->load->view('layout/header');
-      $this->load->view('admin/categoria/vedit',$data);
+      $this->load->view('admin/formato/vedit',$data);
       $this->load->view('layout/menu');
       $this->load->view('layout/footer');
     }
 
     public function cupdate(){
-      $idcategoria       = $this->input->post('txtidcategoria');
+      $idformato       = $this->input->post('txtidformato');
       $codigo            = $this->input->post('txtcodigo');
       $nombre            = $this->input->post('txtnombre');
       $descripcion       = $this->input->post('txtdescripcion');
       $estado            = $this->input->post('txtestado');
-      $categoriaActual   = $this->mcategoria->midupdatecategoria($idcategoria);
-          if ($codigo == $categoriaActual->codigo) {
+      $formatoActual   = $this->mformato->midupdateformato($idformato);
+          if ($codigo == $formatoActual->codigo) {
             $unique = '';
           }else{
-            $unique = '|is_unique[categoria.codigo]';
+            $unique = '|is_unique[formato.codigo]';
           }
 
 
@@ -127,26 +128,26 @@
                   'descripcion' => $descripcion ,
                   'estado' => $estado
                 );
-                $res = $this->mcategoria->mupdatecategoria($idcategoria,$data);
+                $res = $this->mformato->mupdateformato($idformato,$data);
                   if ($res) {
                     $this->session->set_flashdata('correcto','Se Guardó Correctamente');
-                    redirect(base_url().'mantenimiento/ccategoria');
+                    redirect(base_url().'mantenimiento/cformato');
                   }else {
                     $this->session->set_flashdata('error','No se pudo actualizar la categoría');
-                    redirect(base_url().'mantenimiento/ccategoria/cedit'.$idcategoria);
+                    redirect(base_url().'mantenimiento/cformato/cedit'.$idformato);
                   }
               }else {
                 $this->session->set_flashdata('error','No se pudo actualizar la categoría');
-                $this->cedit($idcategoria);
+                $this->cedit($idformato);
               }
             }
 
-            public function cdelete($idcategoria){
+            public function cdelete($idformato){
               $data = array(
                 'estado' => "10",
               );
-              $this->mcolor->mupdatecategoria($idcategoria,$data);
-              redirect(base_url().'mantenimiento/ccategoria');
+              $this->mformato->mupdateformato($idformato,$data);
+              redirect(base_url().'mantenimiento/cformato');
             }
 
   }

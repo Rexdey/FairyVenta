@@ -5,6 +5,8 @@
   All rights reserved.
   <div class="float-right d-none d-sm-inline-block">
     <b>Version</b> 3.0.2
+    <!-- <?php if ($this->uri->segment(2)=='ccategoria') { echo "test"; }?> -->
+    <!-- <?php echo "test2"; ?> -->
   </div>
 </footer>
 
@@ -25,8 +27,8 @@
 <!-- Sparkline -->
 <script src="<?php echo base_url();?>assets/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="<?php echo base_url();?>assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/plugins/jqvmap/jquery.vmap.min.js"></script> -->
+<!-- <script src="<?php echo base_url();?>assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script> -->
 <!-- jQuery Knob Chart -->
 <script src="<?php echo base_url();?>assets/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
@@ -41,17 +43,21 @@
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url();?>assets/dist/js/pages/dashboard.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/dist/js/pages/dashboard.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>assets/dist/js/demo.js"></script>
 <!-- datatables -->
+<script src="<?php echo base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <!-- <script src="<?php echo base_url();?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script> -->
 <!-- <script src="<?php echo base_url();?>assets/plugins/datatablesjquery.dataTables.js"></script> -->
-<script src="<?php echo base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
 
-
-
+<!-- select selectpicker -->
+<script src="<?php echo base_url();?>assets/plugins/select2alt/bootstrap-select.min.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/plugins/select2/js/select2.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/select2/js/select2.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/select2/js/select2.full.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/select2/js/select2.full.js"></script> -->
 <!-- script del proyecto -->
 <?php if ($this->uri->segment(1)=='cpersona') {  ?>
   <script src="<?php echo base_url();?>js/persona.js"></script>
@@ -83,7 +89,8 @@
           "previous": "Anterior "
         },
 
-      }
+      },
+      "scrollX": true
 
     });
 
@@ -106,6 +113,9 @@
   });
 
 </script> -->
+
+
+
 
 </body>
 </html>
