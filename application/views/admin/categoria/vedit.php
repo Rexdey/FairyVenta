@@ -8,7 +8,7 @@
     <section class="content">
       <div class="card">
         <div class="card-body">
-          
+
           <div class="row">
             <div class="col-md-12">
               <?php $valid=""?>
@@ -24,17 +24,17 @@
 
                 <div class="form-group <?php echo !empty(form_error('txtcodigo'))? $valid="is-invalid" :'';?>">
                   <label for="codigo">Código</label>
-                  <input type="text" id="txtcodigo" name="txtcodigo" value="<?php echo !empty(form_error('txtcodigo'))? set_value('txtcodigo') :$categoriaedit->codigo ?>" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtcodigo" name="txtcodigo" value="<?php echo !empty(form_error('txtcodigo'))? set_value('txtcodigo') :$categoriaedit->codigo ?>" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                   <?php echo form_error('txtcodigo','<span class="help-block" style="color:red">','</span>') ?>
                 </div>
                 <div class="form-group <?php echo !empty(form_error('txtnombre'))? 'has-error' :'';?>">
                   <label for="nombre">Nombre</label>
-                  <input type="text" id="txtnombre" name="txtnombre" value="<?php echo $categoriaedit->nombre ?>" class="form-control <?php if(form_error('txtnombre')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtnombre" name="txtnombre" value="<?php echo $categoriaedit->nombre ?>" class="form-control <?php if(form_error('txtnombre')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                   <?php echo form_error('txtnombre','<span class="help-block" style="color:red">','</span>') ?>
                 </div>
                 <div class="form-group <?php echo !empty(form_error('txtdescripcion'))? $valid="is-invalid" :'';?>">
                   <label for="descripcion">Descripción</label>
-                  <input type="text" id="txtdescripcion" name="txtdescripcion" value="<?php echo $categoriaedit->descripcion ?>" class="form-control <?php if(form_error('txtdescripcion')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtdescripcion" name="txtdescripcion" value="<?php echo $categoriaedit->descripcion ?>" class="form-control <?php if(form_error('txtdescripcion')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                   <?php echo form_error('txtdescripcion','<span class="help-block" style="color:red">','</span>') ?>
                 </div>
                 <div class="form-group <?php echo ($categoriaedit->estado == 1) ? $valid="is-valid" : $valid="is-invalid"; ?>">

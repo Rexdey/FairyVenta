@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <section class="content-header">
       <h1>
-          <a href="<?php echo base_url();?>mantenimiento/ctipo_documento/">tipo_documento</a>
+          <a href="<?php echo base_url();?>mantenimiento/csubcategoria/">subcategoria</a>
           <br>
           <small>Nueva</small>
       </h1>
@@ -18,8 +18,20 @@
                   <?php echo $this->session->flashdata('error')?>
                 </div>
               <?php endif; ?>
-              <!-- <form role="form" id="quickForm" action="<?php echo base_url();?>mantenimiento/ctipo_documento/cinsert" method="post"> -->
-              <form  action="<?php echo base_url();?>mantenimiento/ctipo_documento/cinsert" method="post">
+              <!-- <form role="form" id="quickForm" action="<?php echo base_url();?>mantenimiento/csubcategoria/cinsert" method="post"> -->
+              <form  action="<?php echo base_url();?>mantenimiento/csubcategoria/cinsert" method="post">
+
+                <div class="form-group" >
+                  <label for="categoria">Categoria</label>
+                  <select id="txtcategoria" name="txtcategoria" class="form-control selectpicker" data-live-search="true">
+
+                      <?php foreach ($categoriacombo as $atributos):  ?>
+                        <option value="<?php echo $atributos->idcategoria; ?>"<?php if ($atributos->idcategoria==1): echo "selected"; endif ?>><?php echo $atributos->nombre; ?></option>
+                     <?php endforeach ?>
+                   </select>
+                 </div>
+
+
                 <div class="form-group <?php echo !empty(form_error('txtcodigo'))? 'has-error' : '';?>">
                     <label for="codigo">Código</label>
                     <input type="text" id="txtcodigo" name="txtcodigo" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtcodigo')?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
@@ -57,7 +69,7 @@
 
 </div>
 
-<!-- <?php if ($this->uri->segment(2)=='ctipo_documento') {?> -->
+<!-- <?php if ($this->uri->segment(2)=='csubcategoria') {?> -->
 
 <!-- jquery-validation -->
 <!-- <script src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js"></script>

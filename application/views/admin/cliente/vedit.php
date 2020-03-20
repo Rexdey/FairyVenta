@@ -35,7 +35,7 @@
                  </div>
                 <div class="form-group <?php echo !empty(form_error('txtcodigo'))? $valid="is-invalid" :'';?>">
                   <label for="codigo">Código</label>
-                  <input type="text" id="txtcodigo" name="txtcodigo" value="<?php echo !empty(form_error('txtcodigo'))? set_value('txtcodigo') :$clienteedit->codigo ?>" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtcodigo" name="txtcodigo" value="<?php echo !empty(form_error('txtcodigo'))? set_value('txtcodigo') :$clienteedit->codigo ?>" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                   <?php echo form_error('txtcodigo','<span class="help-block" style="color:red">','</span>') ?>
                 </div>
                 <div class="form-group" >
@@ -54,16 +54,16 @@
 
                 <div class="form-group <?php echo !empty(form_error('txtnombre'))? 'has-error' :'';?>">
                   <label for="nombre">Nombre</label>
-                  <input type="text" id="txtnombre" name="txtnombre" value="<?php echo $clienteedit->nombre ?>" class="form-control <?php if(form_error('txtnombre')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtnombre" name="txtnombre" value="<?php echo $clienteedit->nombre ?>" class="form-control <?php if(form_error('txtnombre')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                   <?php echo form_error('txtnombre','<span class="help-block" style="color:red">','</span>') ?>
                 </div>
                 <div class="form-group">
                   <label for="direccion">Dirección</label>
-                  <input type="text" id="txtdireccion" name="txtdireccion" value="<?php echo $clienteedit->direccion ?>" class="form-control <?php if(form_error('txtdireccion')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtdireccion" name="txtdireccion" value="<?php echo $clienteedit->direccion ?>" class="form-control <?php if(form_error('txtdireccion')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                 </div>
                 <div class="form-group">
                   <label for="telefono">Telefono</label>
-                  <input type="text" id="txttelefono" name="txttelefono" value="<?php echo $clienteedit->telefono ?>" class="form-control <?php if(form_error('txttelefono')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txttelefono" name="txttelefono" value="<?php echo $clienteedit->telefono ?>" class="form-control <?php if(form_error('txttelefono')) : ?>is-invalid<?php endif; ?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                 </div>
 
 

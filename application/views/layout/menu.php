@@ -55,7 +55,13 @@
                  <li class="nav-item">
                    <a href="<?php echo base_url();?>mantenimiento/cmedida" class="nav-link">
                      <i class="far fa-circle nav-icon"></i>
-                     <p>medida</p>
+                     <p>Medida</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/cunmedida" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>Unidad de Medida</p>
                    </a>
                  </li>
                  <li class="nav-item">
@@ -80,6 +86,18 @@
                    <a href="<?php echo base_url();?>mantenimiento/cproveedor" class="nav-link">
                      <i class="far fa-circle nav-icon"></i>
                      <p>Proveedor</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/cproducto" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>Producto</p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="<?php echo base_url();?>mantenimiento/csubcategoria" class="nav-link">
+                     <i class="far fa-circle nav-icon"></i>
+                     <p>Subcategoria</p>
                    </a>
                  </li>
 

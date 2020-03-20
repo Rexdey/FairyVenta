@@ -58,6 +58,13 @@
 <script src="<?php echo base_url();?>assets/plugins/select2/js/select2.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/select2/js/select2.full.min.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/select2/js/select2.full.js"></script> -->
+
+<!-- lightbox -->
+<!-- <script src="<?php echo base_url();?>assets/plugins/lightbox/dist/css/lightbox-plus-jquery.min.js"></script> -->
+
+
+
+
 <!-- script del proyecto -->
 <?php if ($this->uri->segment(1)=='cpersona') {  ?>
   <script src="<?php echo base_url();?>js/persona.js"></script>

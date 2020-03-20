@@ -9,7 +9,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">
-                <a href="<?php echo base_url();?>mantenimiento/ccliente/cadd" class="btn btn-primar"><span class="fa fa-plus"></span>Agregar cliente</a>
+                <a href="<?php echo base_url();?>mantenimiento/ccliente/cadd" class="btn btn-primary"><span class="fa fa-plus"></span>Agregar cliente</a>
 
               </div>
 

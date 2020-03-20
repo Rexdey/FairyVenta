@@ -14,8 +14,7 @@
               </div>
 
             </div>
-            <br>
-            <?php if ($this->session->flashdata('correcto')): ?>
+           <?php if ($this->session->flashdata('correcto')): ?>
               <br>
             <div class="alert alert-success">
               <?php echo $this->session->flashdata('correcto')?>

@@ -33,7 +33,7 @@
 
                 <div class="form-group <?php echo !empty(form_error('txtcodigo'))? 'has-error' : '';?>">
                     <label for="codigo">Código</label>
-                    <input type="text" id="txtcodigo" name="txtcodigo" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtcodigo')?>" onblur="this.value=this.value.toUpperCase();">
+                    <input type="text" id="txtcodigo" name="txtcodigo" class="form-control <?php if(form_error('txtcodigo')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtcodigo')?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                     <?php echo form_error('txtcodigo','<span class="help-block" style="color:red">','</span>')?>
 
                 </div>
@@ -51,17 +51,17 @@
 
                 <div class="form-group <?php echo !empty(form_error('txtnombre'))? 'has-error' : '';?>" >
                   <label for="nombre">Nombre</label>
-                  <input type="text" id="txtnombre" name="txtnombre" class="form-control <?php if(form_error('txtnombre')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtnombre')?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtnombre" name="txtnombre" class="form-control <?php if(form_error('txtnombre')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtnombre')?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                   <?php echo form_error('txtnombre','<span class="help-block" style="color:red">','</span>')?>
                 </div>
                 <div class="form-group?>">
                   <label for="direccion">Dirección</label>
-                  <input type="text" id="txtdireccion" name="txtdireccion" class="form-control <?php if(form_error('txtdireccion')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtdireccion')?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txtdireccion" name="txtdireccion" class="form-control <?php if(form_error('txtdireccion')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txtdireccion')?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                 </div>
 
                 <div class="form-group?>">
                   <label for="telefono">Telefono</label>
-                  <input type="text" id="txttelefono" name="txttelefono" class="form-control <?php if(form_error('txttelefono')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txttelefono')?>" onblur="this.value=this.value.toUpperCase();">
+                  <input type="text" id="txttelefono" name="txttelefono" class="form-control <?php if(form_error('txttelefono')) : ?>is-invalid<?php endif; ?>" value="<?php echo set_value('txttelefono')?>" onblur="this.value=this.value.toUpperCase();" onkeypress="this.value=this.value.toUpperCase();">
                 </div>
 
                 <div class="form-group">
